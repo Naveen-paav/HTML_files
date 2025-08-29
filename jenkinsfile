@@ -3,15 +3,15 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-username/your-repo.git'
+                git 'https://github.com/Naveen-paav/HTML_files.git'
             }
         }
         stage('Deploy to EC2') {
             steps {
                 sshagent(['ec2-ssh']) {
                     sh '''
-                    scp -o StrictHostKeyChecking=no index.html ec2-user@<EC2-Public-IP>:/var/www/html/
-                    ssh ec2-user@<EC2-Public-IP> "sudo systemctl restart nginx"
+                    scp -o StrictHostKeyChecking=no index.html ec2-user@13.233.128.225:/var/www/html/
+                    ssh ec2-user@13.233.128.225 "sudo systemctl restart nginx"
                     '''
                 }
             }
