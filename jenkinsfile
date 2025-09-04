@@ -10,8 +10,8 @@ pipeline {
             steps {
                 sshagent(['ec2-ssh']) {
                     sh '''
-                    scp -o StrictHostKeyChecking=no index.html ec2-user@3.109.217.94:/var/www/html/
-                    ssh ec2-user@3.109.217.94 "sudo systemctl restart nginx"
+                    scp -o StrictHostKeyChecking=no index.html ec2-user@13.201.39.164:/var/www/html/
+                    ssh ec2-user@13.201.39.164 "sudo systemctl restart nginx"
                     '''
                 }
             }
