@@ -13,10 +13,10 @@ pipeline {
                 sshagent(['ec2-ssh-key']) {
                     sh '''
                     # Copy file to Nginx server
-                    scp -o StrictHostKeyChecking=no index.html ec2-user@13.201.71.217:/usr/share/nginx/html/index.html
+                    scp -o StrictHostKeyChecking=no index.html ec2-user@13.233.173.240:/usr/share/nginx/html/index.html
                     
                     # Restart Nginx
-                    ssh ec2-user@13.201.71.217 "sudo systemctl restart nginx"
+                    ssh ec2-user@13.233.173.240 "sudo systemctl restart nginx"
                     '''
                 }
             }
